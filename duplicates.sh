@@ -43,6 +43,7 @@ print_duplicates() {
     if ((counts["$name"] > 1)); then
       printf 'Duplicate: %s (%d files)\n' "$name" "${counts[$name]}"
       printf '%s' "${paths[$name]}"
+      printf '\n'
       ((duplicate_count++))
     fi
   done
