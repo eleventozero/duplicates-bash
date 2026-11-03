@@ -39,12 +39,8 @@ If no duplicate names are found, the script prints `Duplicate file names found: 
 
 ## Design
 
-- **Associative arrays instead of a** `sort`**/**`uniq` **pipeline**
-
-  File names are used directly as keys. One array counts occurrences; the other collects the corresponding paths. This keeps duplicate detection in a straightforward loop.
-- **Small, focused functions**
-
-  Argument validation, file collection, and output are separated so each step is easy to follow.
+- **Associative arrays instead of a** `sort`**/**`uniq` **pipeline:** File names are used directly as keys. One array counts occurrences; the other collects the corresponding paths. This keeps duplicate detection in a straightforward loop.
+- **Small, focused functions:** Argument validation, file collection, and output are separated so each step is easy to follow.
 - **Shared arrays by design:** `counts` and `paths` are global because collection and output need the same data.
 - **Controlled error handling:** `find` errors are collected in a temporary file and printed as warnings on `stderr`. `trap` cleans up the file on exit.
 
