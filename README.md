@@ -55,9 +55,3 @@ If no duplicate names are found, the script prints `Duplicate file names found: 
 - `mktemp` creates a temporary file for `find` error messages; `trap ... EXIT` removes it when the script exits. Unreadable subdirectories produce warnings, while the remaining search continues.
 
 File names containing newline characters are not supported, because the collected paths are stored with newline separators.
-
-## Testing
-
-An automated Bash test suite checks duplicate detection, special file names, symbolic links, extension filtering, and error handling:
-
-[View automated tests on GitHub](https://github.com/eleventozero/duplicates-bash/blob/main/test_duplicates.sh)
